@@ -37,11 +37,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         >
             {/* Background gradient overlay */}
             <div
-                className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 transition-all duration-500 group-hover:opacity-15 group-hover:scale-110`}
+                className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 transition-all duration-500 group-hover:opacity-15 group-hover:scale-110 z-0`}
             ></div>
 
             {/* Card content */}
-            <div className="relative p-6">
+            <div className="relative p-6 z-10">
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-gray-800 transition-colors duration-300">
                     {project.name}
                 </h3>
@@ -51,7 +51,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 </p>
 
                 {/* Action buttons */}
-                <div className="flex flex-col space-y-3">
+                <div className="flex flex-col space-y-3 relative z-20">
                     <Link
                         href={`/projects/${project.id}`}
                         className="inline-flex items-center justify-center px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:bg-gray-800 hover:scale-105 transform"
@@ -114,7 +114,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
             {/* Hover effect overlay */}
             <div
-                className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 transition-all duration-500 group-hover:opacity-8`}
+                className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 transition-all duration-500 group-hover:opacity-8 z-5`}
             ></div>
         </div>
     )
