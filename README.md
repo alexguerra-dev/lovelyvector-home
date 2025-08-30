@@ -9,6 +9,24 @@
 - [november.lovelyvector.com](https://november.lovelyvector.com/)
 - [lrnr.lovelyvector.com](https://lrnr.lovelyvector.com/)
 
+## lovelyVector.com
+
+This is the root of my domain. It can be found [here](https://lovelyVector.com).
+
+## Shoshin
+
+## Elegant Mess
+
+## Moods
+
+## Memory
+
+## Bokendokei
+
+## November
+
+## Lrnr
+
 ## Development
 
 First, run the development server:
