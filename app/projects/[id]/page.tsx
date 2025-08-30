@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -108,6 +110,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         notFound()
     }
 
+    const handleLiveClick = () => {
+        window.open(project.subdomain, '_blank', 'noopener,noreferrer')
+    }
+
+    const handleCodeClick = () => {
+        window.open(project.github, '_blank', 'noopener,noreferrer')
+    }
+
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Header */}
@@ -165,16 +175,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a
-                        href={project.subdomain}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() =>
-                            console.log(
-                                'Visit Live Site clicked for:',
-                                project.name,
-                            )
-                        }
+                    <button
+                        onClick={handleLiveClick}
                         className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white text-lg font-medium rounded-lg transition-all duration-300 hover:bg-blue-700 hover:scale-105 transform shadow-lg cursor-pointer"
                     >
                         <svg
@@ -189,18 +191,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                             />
                         </svg>
                         Visit Live Site
-                    </a>
+                    </button>
 
-                    <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() =>
-                            console.log(
-                                'View Source Code clicked for:',
-                                project.name,
-                            )
-                        }
+                    <button
+                        onClick={handleCodeClick}
                         className="inline-flex items-center justify-center px-8 py-4 bg-gray-800 text-white text-lg font-medium rounded-lg transition-all duration-300 hover:bg-gray-900 hover:scale-105 transform shadow-lg cursor-pointer"
                     >
                         <svg
@@ -215,7 +209,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                             />
                         </svg>
                         View Source Code
-                    </a>
+                    </button>
                 </div>
             </main>
         </div>

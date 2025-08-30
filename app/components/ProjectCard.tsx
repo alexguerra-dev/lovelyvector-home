@@ -19,6 +19,16 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
     const [, setIsHovered] = useState(false)
 
+    const handleLiveClick = (e: React.MouseEvent) => {
+        e.preventDefault()
+        window.open(project.subdomain, '_blank', 'noopener,noreferrer')
+    }
+
+    const handleCodeClick = (e: React.MouseEvent) => {
+        e.preventDefault()
+        window.open(project.github, '_blank', 'noopener,noreferrer')
+    }
+
     return (
         <div
             className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 hover:scale-105"
@@ -63,16 +73,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     </Link>
 
                     <div className="flex space-x-2">
-                        <a
-                            href={project.subdomain}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() =>
-                                console.log(
-                                    'Live button clicked for:',
-                                    project.name,
-                                )
-                            }
+                        <button
+                            onClick={handleLiveClick}
                             className="flex-1 inline-flex items-center justify-center px-3 py-2 bg-blue-600 text-white text-xs font-medium rounded-lg transition-all duration-300 hover:bg-blue-700 hover:scale-105 transform cursor-pointer"
                         >
                             <svg
@@ -87,18 +89,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                                 />
                             </svg>
                             Live
-                        </a>
+                        </button>
 
-                        <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() =>
-                                console.log(
-                                    'Code button clicked for:',
-                                    project.name,
-                                )
-                            }
+                        <button
+                            onClick={handleCodeClick}
                             className="flex-1 inline-flex items-center justify-center px-3 py-2 bg-gray-700 text-white text-xs font-medium rounded-lg transition-all duration-300 hover:bg-gray-800 hover:scale-105 transform cursor-pointer"
                         >
                             <svg
@@ -113,7 +107,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                                 />
                             </svg>
                             Code
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
