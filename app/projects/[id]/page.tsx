@@ -93,6 +93,17 @@ const projects = [
         color: 'from-slate-600 to-gray-700',
         tags: ['Meditation', 'Mindfulness', 'Wellness'],
     },
+    {
+        id: 'resume',
+        name: 'Resume',
+        description: 'A resume builder and generator',
+        longDescription:
+            'Resume is a resume builder and generator that helps users create a professional resume.',
+        subdomain: 'https://resume.lovelyvector.com',
+        github: 'https://github.com/alexguerra-dev/resume',
+        color: 'from-indigo-500 to-blue-600',
+        tags: ['Resume', 'Builder', 'Generator'],
+    },
 ]
 
 interface ProjectPageProps {
