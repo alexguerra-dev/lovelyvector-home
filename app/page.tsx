@@ -67,6 +67,14 @@ const projects = [
         github: 'https://github.com/alexguerra-dev/zen',
         color: 'from-slate-600 to-gray-700',
     },
+    {
+        id: 'resume',
+        name: 'Resume',
+        description: 'A resume builder and generator',
+        subdomain: 'https://resume.lovelyvector.com',
+        github: 'https://github.com/alexguerra-dev/resume',
+        color: 'from-indigo-500 to-blue-600',
+    },
 ]
 
 export default function Home() {
